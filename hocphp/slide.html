@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="jquery/jquery.bxslider.min.js"></script>
+    <link href="jquery/jquery.bxslider.css" rel="stylesheet" />
+    <style type="text/css">
+        .bxslider{
+            width: 50%;
+            height: 500px;
+        }
+        .bx-wrapper .bx-pager {
+            bottom: -95px;
+        }
+
+        .bx-wrapper .bx-pager a {
+            border: solid #ccc 1px;
+            display: block;
+            margin: 0 5px;
+            padding: 3px;
+        }
+
+        .bx-wrapper .bx-pager a:hover,
+        .bx-wrapper .bx-pager a.active {
+            border: solid #5280DD 1px;
+        }
+
+        .bx-wrapper {
+            margin-bottom: 120px;
+        }
+    </style>
+</head>
+<body>
+<ul class="bxslider">
+    <li><img src="jquery/images/iphone_7_grey%20-%20big.jpeg" /></li>
+    <li><img src="jquery/images/iphone_7_gold%20-%20Copy.jpg" /></li>
+    <li><img src="jquery/images/iphone_7_white%20-%20Copy.png" /></li>
+</ul>
+<script>
+    $('.bxslider').bxSlider({
+        buildPager: function(slideIndex){
+            switch(slideIndex){
+                case 0:
+                    return '<img src="jquery/images/iphone_7_grey%20-%20Copy.jpeg">';
+                case 1:
+                    return '<img src="jquery/images/iphone_7_gold%20-%20Copy.jpg">';
+                case 2:
+                    return '<img src="jquery/images/iphone_7_white%20-%20Copy.png">';
+            }
+        }
+    });
+</script>
+</body>
+</html>
